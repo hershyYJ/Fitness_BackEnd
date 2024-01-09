@@ -18,8 +18,9 @@ public class MatchingEntity {
     @Column(name = "id")
     private int matchingId;
 
-    @Column(name = "user_id")
-    private int userId;
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private UserEntity userId;
 
     @Column(name = "career_options")
     private String careerOptions;

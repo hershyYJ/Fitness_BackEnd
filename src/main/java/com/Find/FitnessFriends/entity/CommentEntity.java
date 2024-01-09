@@ -20,11 +20,13 @@ public class CommentEntity {
     @Column(name = "id")
     private int commentId;
 
-    @Column(name = "board_id")
-    private int boardId;
+    @ManyToOne
+    @JoinColumn(name = "board_id", referencedColumnName = "id")
+    private BoardEntity boardId;
 
-    @Column(name = "user_id")   // 댓글 작성자 id
-    private int userId;
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")   // 댓글 작성자 id
+    private UserEntity userId;
 
     @Column(name = "content")
     private String content;

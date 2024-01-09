@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "User")
+@Table(name = "\"User\"")
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +25,9 @@ public class UserEntity {
 
     @Column(name = "password")
     private String userPassword;
+
+    @Column(name = "nickname")
+    private String userNickname;
 
     @Column(name = "phone_number")
     private String userPhoneNumber;
@@ -46,11 +49,5 @@ public class UserEntity {
 
     @Column(name = "profile_image")
     private String userProfileImage;
-
-    @Column(name = "created_At")
-    private LocalDateTime createdAt;
-
-    @Column(name = "updated_At")
-    private LocalDateTime updatedAt;
 }
 

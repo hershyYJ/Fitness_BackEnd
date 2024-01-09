@@ -20,8 +20,9 @@ public class ReviewEntity {
     @Column(name = "id")
     private int reviewId;
 
-    @Column(name = "user_id")
-    private int userId;
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private UserEntity userId;
 
     @Column(name = "rating")
     private Double rating;
